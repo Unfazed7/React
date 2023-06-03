@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import img1 from './images/yaari.png'
 import './Navbar.css';
 
 const Navbar = () => {
@@ -55,7 +56,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-right">
-        <img src="D:\Yaari Internship\t3\src\yaari-white-logo.png" alt="Logo" className="logo" />
+        <img src={img1} alt="" className="logo" />
         <input type="text" placeholder="Search" className={`search-bar ${isMobile ? 'mobile' : ''}`} />
       </div>
     </nav>
