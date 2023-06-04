@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import img1 from './images/yaari.png'
 import './Navbar.css';
+import './About';
+import './Contact.js';
+import './Home.js';
+
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,15 +28,15 @@ const Navbar = () => {
       switch (event.key) {
         case '1':
           // Handle navigation to Home
-          window.location.href = '/';
+          window.location.href = './Home.js';
           break;
         case '2':
           // Handle navigation to About
-          window.location.href = '/about';
+          window.location.href = './About.js';
           break;
         case '3':
           // Handle navigation to Contact
-          window.location.href = '/contact';
+          window.location.href = './Contact.js';
           break;
         default:
           break;
@@ -46,13 +50,13 @@ const Navbar = () => {
     };
   }, []);
 
-  return (
+ return (
     <nav className={`navbar ${isMobile ? 'mobile' : ''}`}>
       <div className="navbar-left">
         <ul className={`nav-links ${isMobile ? 'mobile' : ''}`}>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="./Home.js">Home</a></li>
+          <li><a href="./About.js">About</a></li>
+          <li><a href="./Contact.js">Contact</a></li>
         </ul>
       </div>
       <div className="navbar-right">
