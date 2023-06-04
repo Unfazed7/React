@@ -5,4 +5,5 @@ const About = () => {
     return(
         <h2>This is About us webpage</h2>
     );
+    <About/>
 }
