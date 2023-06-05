@@ -1,8 +1,11 @@
-import React from "react";
+import React from 'react'
 
-const Cont = () => {
-
-    return(
-        <h2>This is Contact webpage</h2>
-    );
+const About = () => {
+  return (
+    <div>
+      This is About page
+    </div>
+  )
 }
+
+export default About
