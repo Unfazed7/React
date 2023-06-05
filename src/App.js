@@ -1,17 +1,19 @@
-import React from 'react';
+import React from "react";
 
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation
+  Link,
+  useLocation,
 } from "react-router-dom";
 
-import img1 from './images/yaari.png';
-import './Navbar.css';
-import About from './About';
-import Contact from './Contact';
-import Home from './Home';
+import img1 from "./images/yaari.png";
+import "./Navbar.css";
+import About from "./About";
+import Contact from "./Contact";
+import Home from "./Home";
+//import './App.css';
 
 const Navbar = () => {
   const location = useLocation();
@@ -20,13 +22,13 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <ul className="nav-links">
-          <li className={location.pathname === '/' ? 'active' : ''}>
+          <li className={location.pathname === "/" ? "active" : ""}>
             <Link to="./Home">Home</Link>
           </li>
-          <li className={location.pathname === '/about' ? 'active' : ''}>
+          <li className={location.pathname === "/about" ? "active" : ""}>
             <Link to="./About">About</Link>
           </li>
-          <li className={location.pathname === '/contact' ? 'active' : ''}>
+          <li className={location.pathname === "/contact" ? "active" : ""}>
             <Link to="./Contact">Contact</Link>
           </li>
         </ul>
@@ -55,4 +57,3 @@ const App = () => {
 };
 
 export default App;
-
