@@ -4,6 +4,7 @@ import './Navbar.css';
 import './About';
 import './Contact.js';
 import './Home.js';
+import './App.css';
 
 
 const Navbar = () => {
