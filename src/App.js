@@ -2,7 +2,7 @@
 import img1 from './images/yaari.png';
 import './Navbar.css';
 import { useEffect, useState } from 'react';
-import './About';
+import './About.js';
 import './Contact.js';
 import './Home.js';
 import './App.css';
