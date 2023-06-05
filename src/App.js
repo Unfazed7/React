@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import img1 from './images/yaari.png'
+
+import img1 from './images/yaari.png';
 import './Navbar.css';
+import { useEffect, useState } from 'react';
 import './About';
 import './Contact.js';
 import './Home.js';
@@ -51,7 +52,7 @@ const Navbar = () => {
     };
   }, []);
 
- return (
+  return (
     <nav className={`navbar ${isMobile ? 'mobile' : ''}`}>
       <div className="navbar-left">
         <ul className={`nav-links ${isMobile ? 'mobile' : ''}`}>
@@ -61,6 +62,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-right">
+
         <img src={img1} alt="" className="logo" />
         <input type="text" placeholder="Search" className={`search-bar ${isMobile ? 'mobile' : ''}`} />
       </div>
