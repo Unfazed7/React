@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
   useLocation
 } from "react-router-dom";
 
@@ -13,7 +12,6 @@ import './Navbar.css';
 import About from './About';
 import Contact from './Contact';
 import Home from './Home';
-//import './App.css';
 
 const Navbar = () => {
   const location = useLocation();
