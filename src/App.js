@@ -13,7 +13,7 @@ import "./Navbar.css";
 import About from "./About";
 import Contact from "./Contact";
 import Home from "./Home";
-//import './App.css';
+import Slider from './Slider';
 
 const Navbar = () => {
   const location = useLocation();
@@ -46,6 +46,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Navbar />
+        <Slider />
         <Routes>
           <Route path="/Home" element={<Home />} />
           <Route path="/About" element={<About />} />
