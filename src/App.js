@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import img1 from './images/yaari.png';
 import './Navbar.css';
-import './About.js';
-import './Contact.js';
-import './Home.js';
+import './About.js'; 
+import './Contact.js'; 
+import './Home.js'; 
 import './App.css';
 
 const Navbar = () => {
