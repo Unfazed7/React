@@ -1,70 +1,60 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation
+} from "react-router-dom";
+
 import img1 from './images/yaari.png';
 import './Navbar.css';
-/*import './About.js'; 
-import './Contact.js'; */
-import './Home.js'; 
-import './App.css';
+import About from './About';
+import Contact from './Contact';
+import Home from './Home';
+//import './App.css';
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize(); // Initial check
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      switch (event.key) {
-        case '1':
-          // Handle navigation to Home
-          window.location.href = '/home';
-          break;
-        case '2':
-          // Handle navigation to About
-          window.location.href = '/about';
-          break;
-        case '3':
-          // Handle navigation to Contact
-          window.location.href = '/contact';
-          break;
-        default:
-          break;
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []);
+  const location = useLocation();
 
   return (
-    <nav className={`navbar ${isMobile ? 'mobile' : ''}`}>
+    <nav className="navbar">
       <div className="navbar-left">
-        <ul className={`nav-links ${isMobile ? 'mobile' : ''}`}>
-          <li><a href="/home">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+        <ul className="nav-links">
+          <li className={location.pathname === '/' ? 'active' : ''}>
+            <Link to="./Home">Home</Link>
+          </li>
+          <li className={location.pathname === '/about' ? 'active' : ''}>
+            <Link to="./About">About</Link>
+          </li>
+          <li className={location.pathname === '/contact' ? 'active' : ''}>
+            <Link to="./Contact">Contact</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-right">
         <img src={img1} alt="" className="logo" />
-        <input type="text" placeholder="Search" className={`search-bar ${isMobile ? 'mobile' : ''}`} />
+        <input type="text" placeholder="Search" className="search-bar" />
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+const App = () => {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
+
