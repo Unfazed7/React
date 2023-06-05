@@ -52,9 +52,11 @@ const App = () => {
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
-      </div>
+      </div>  
     </Router>
+    
   );
 };
+
 
 export default App;
